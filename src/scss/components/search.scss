@@ -1,0 +1,59 @@
+.search {
+  width: 592px;
+  margin-left: 61px;
+  position: relative;
+
+  @include adpt-max($desm-r) {
+    margin-left: 40px;
+  }
+
+  @include adpt-max($tab-r) {
+    margin-left: 25px;
+  }
+
+  @include adpt-max($mtab-r) {
+    display: none;
+  }
+
+  &::before {
+    @include pseudo;
+    top: 15px;
+    left: 16px;
+
+    width: 15px;
+    height: 15px;
+
+    background-image: url('../img/UI/search.svg');
+  }
+
+  &__input {
+    width: 100%;
+    padding: 13px 17px 13px 48px;
+
+    border-radius: 100px;
+    background-color: $bg__gray;
+
+    color: $basic;
+
+    &::placeholder {
+      color: $descriptor;
+      transform: translateX(15%);
+
+      transition: color 0.3s, transform 0.3s;
+
+      @include adpt-max($mtab-r) {
+        transform: translateX(0%);
+      }
+    }
+
+    &:focus {
+      background-color: $bg__white;
+      outline: 2px solid $blue-banner;
+
+      &::placeholder {
+        color: $icon;
+        transform: translateX(0%);
+      }
+    }
+  }
+}

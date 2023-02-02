@@ -1,0 +1,86 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  @include adpt-max($desm-r) {
+    gap: 20px;
+  }
+
+  @include adpt-max($tab-r) {
+    gap: 10px;
+  }
+
+  @include adpt-max($mtab-r) {
+    gap: 20;
+  }
+
+  &__favorits {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    position: relative;
+    width: 48px;
+    height: 32px;
+
+    border-radius: 37px;
+    padding-right: 8px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $bg__gray;
+    }
+
+    &:focus {
+      background-color: $bg__gray;
+      outline: none;
+    }
+
+    &::before {
+      @include pseudo;
+      left: 9px;
+
+      width: 15px;
+      height: 14px;
+
+      background-image: url('../img/UI/favorite.svg');
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    cursor: pointer;
+
+    &:hover {
+      & .user__name {
+        color: $descriptor;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      & .user__name {
+        color: $descriptor;
+      }
+    }
+
+    @include adpt-max($bmob-r) {
+      display: none;
+    }
+  }
+
+  &__name {
+    transition: color 0.2s;
+  }
+
+  &__avatar {
+    max-width: 32px;
+  }
+}

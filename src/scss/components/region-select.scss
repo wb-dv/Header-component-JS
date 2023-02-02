@@ -1,0 +1,269 @@
+.region-select {
+  position: absolute;
+  z-index: -10;
+  top: 48px;
+  left: 16px;
+  width: 384px;
+
+  display: block;
+  padding-top: 24px;
+
+  background-color: #fbfbfb;
+  box-shadow: 0px 7px 38px rgba(44, 62, 106, 0.25);
+  border-radius: 10px;
+
+  transform-origin: 0% 0%;
+  transform: scale(0.5);
+  opacity: 0;
+
+  transition: transform 0.3s, opacity 0.3s;
+
+  @include adpt-max($desm-r) {
+    left: 12px;
+  }
+
+  @include adpt-max($stab-r) {
+    left: 20px;
+  }
+
+  @include adpt-max($bmob-r) {
+    padding-top: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    box-shadow: none;
+    border-radius: 0;
+
+    transform-origin: 50% 50%;
+  }
+
+  &._open {
+    z-index: 6;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &__search {
+    margin: 0 16px;
+    width: 352px;
+    position: relative;
+
+    @include adpt-max($bmob-r) {
+      width: auto;
+    }
+
+    &.searching {
+      .region-select__clear-input {
+        display: block;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+
+    padding: 11px 25px;
+
+    border-radius: 100px;
+
+    &::placeholder {
+      color: $icon;
+    }
+  }
+
+  &__clear-input,
+  &__tag-remove {
+    display: none;
+    width: 32px;
+    height: 32px;
+
+    right: 4px;
+    top: 4px;
+
+    &::before {
+      width: 18px;
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      width: 18px;
+      transform: translate(50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__tag-remove {
+    position: relative;
+    display: block;
+
+    right: auto;
+    top: auto;
+  }
+
+  &__tags-field {
+    max-width: 352px;
+    width: 100%;
+    margin: 0 16px;
+    padding: 16px 0;
+
+    display: none;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 4px;
+
+    border-bottom: 1px solid $stroke;
+
+    &.containElems {
+      display: flex;
+    }
+
+    @include adpt-max($bmob-r) {
+      width: auto;
+      max-width: none;
+    }
+  }
+
+  &__tag {
+    display: flex;
+    padding: 4px 4px 4px 16px;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid $stroke;
+    border-radius: 100px;
+  }
+
+  &__select {
+    width: 100%;
+    max-height: 223px;
+    padding: 6px 0;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: $blue-banner transparent;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue-banner;
+      border-radius: 5px;
+    }
+
+    @include adpt-max($bmob-r) {
+      max-height: none;
+    }
+  }
+
+  &__option {
+    width: 100%;
+    padding: 10px 23px;
+    text-align: left;
+    cursor: pointer;
+    background-color: transparent;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $bg__gray;
+    }
+
+    &.added {
+      background-color: $bg__gray;
+    }
+
+    strong {
+      color: $blue-primary;
+    }
+  }
+
+  &__not-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 50px 0;
+  }
+
+  &__save-btn {
+    width: 100%;
+    padding: 16px 0;
+    margin-top: auto;
+
+    border-radius: 0 0 10px 10px;
+
+    color: #fff;
+    background-color: $blue-primary;
+    opacity: 1;
+    border-top: none;
+
+    transition: color 0.2s, background-color 0.2s, opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:disabled,
+    &[disabled] {
+      color: $descriptor;
+      background-color: transparent;
+      border-top: 1px solid $stroke;
+
+      @include adpt-max($bmob-r) {
+        border: 1px solid $stroke;
+      }
+    }
+
+    @include adpt-max($bmob-r) {
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__mob-container {
+    @include adpt-max($bmob-r) {
+      width: 100%;
+      max-width: 720px;
+      height: 100vh;
+      margin: 0 auto;
+      padding-top: 24px;
+      padding: 24px 15px 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+
+  &__mob-header {
+    display: none;
+
+    @include adpt-max($bmob-r) {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__close-btn {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+
+    transform: rotate(180deg);
+
+    background-image: url('../img/UI/arrow_right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

@@ -1,0 +1,53 @@
+.header {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  background-color: $bg__white;
+  padding: 24px 0 18px 0;
+
+  @include adpt-max($mtab-r) {
+    padding: 16px 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+
+    @include adpt-max($smob-r) {
+      padding: 0 0 0 14px;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include adpt-max($mtab-r) {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    @include adpt-max($bmob-r) {
+      display: none;
+    }
+  }
+
+  &__mobile-row {
+    display: none;
+
+    @include adpt-max($bmob-r) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__left-group {
+    display: flex;
+    align-items: center;
+  }
+}

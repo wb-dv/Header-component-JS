@@ -1,0 +1,64 @@
+.nav {
+  width: 100%;
+
+  &__list {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__item {
+    padding: 2px 10px;
+    border-radius: 34px;
+    background-color: transparent;
+
+    transition: background-color 0.2s;
+
+    &.active {
+      background-color: $bg__gray;
+    }
+  }
+
+  &__link {
+    opacity: 1;
+
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+
+  &__scroll-to-right {
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    width: 110px;
+    height: 32px;
+
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 71%
+    );
+  }
+
+  &__scroll-btn {
+    width: 29%;
+    height: 100%;
+
+    background-image: url('../img/UI/arrow_right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

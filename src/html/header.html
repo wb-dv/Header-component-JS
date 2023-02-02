@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="container header__container">
+    <div class="header__row">
+      <div class="header__left-group">
+        @@include('burger.html') @@include('logo.html')
+        @@include('pick-region.html')
+        <div class="search">
+          <input
+            class="search__input text__base"
+            type="text"
+            placeholder="Учебное заведение, специальность или профессия"
+          />
+          <button
+            class="close-btn region-select__clear-input"
+            type="button"
+          ></button>
+        </div>
+      </div>
+      @@include('user.html')
+    </div>
+    <div class="header__row">@@include('nav.html')</div>
+    <div class="header__mobile-row">
+      @@include('burger.html') @@include('logo.html') @@include('user.html')
+    </div>
+  </div>
+</header>

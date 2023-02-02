@@ -1,0 +1,178 @@
+html {
+  font-family: 'OpenSans';
+  color: $basic;
+  background-color: $bg__white;
+  overflow-x: hidden;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: $basic;
+  }
+
+  li,
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.container {
+  max-width: 1246px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+
+  @include adpt-max($smob-r) {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  &__base {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__sign {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+
+    @include adpt-max($smob-r) {
+      line-height: 22px;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 20px;
+
+    @include adpt-max($smob-r) {
+      line-height: 22px;
+    }
+  }
+
+  &__descriptor {
+    color: $descriptor;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  &__btn {
+    font-family: 'Formular';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @include adpt-max($smob-r) {
+      font-size: 11px;
+      line-height: 14px;
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  width: 20px;
+  height: 16px;
+
+  background-color: transparent;
+
+  &::before {
+    @include pseudo;
+
+    width: 20px;
+    height: 2px;
+    background-color: $icon;
+
+    transform: rotate(45deg);
+
+    transition: background-color 0.2s;
+  }
+
+  &::after {
+    @include pseudo;
+
+    width: 20px;
+    height: 2px;
+    background-color: $icon;
+
+    transform: rotate(-45deg);
+
+    transition: background-color 0.2s;
+  }
+
+  &:hover {
+    &::before {
+      background-color: $descriptor;
+    }
+
+    &::after {
+      background-color: $descriptor;
+    }
+  }
+}
+
+input[type='text'] {
+  cursor: url('../img/UI/cursor.svg'), auto;
+}
+
+h4 {
+  font-family: 'Formular';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+
+  @include adpt-max($smob-r) {
+    line-height: 22px;
+  }
+}
+
+._waiting {
+  display: none;
+}

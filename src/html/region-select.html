@@ -1,0 +1,25 @@
+<div class="region-select">
+  <div class="region-select__mob-container">
+    <h4 class="region-select__mob-header">
+      <button class="region-select__close-btn" type="button"></button>
+      Город или регион
+    </h4>
+    <div class="region-select__search">
+      <input
+        class="search__input text__base region-select__input"
+        type="text"
+        placeholder="Регион, город, населенный пункт"
+      />
+      <button
+        class="close-btn region-select__clear-input"
+        type="button"
+      ></button>
+    </div>
+    <ul class="region-select__tags-field"></ul>
+    @@include('loader.html')
+    <ul class="region-select__select"></ul>
+    <button class="text__btn region-select__save-btn" type="button" disabled>
+      Сохранить
+    </button>
+  </div>
+</div>

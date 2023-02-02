@@ -1,0 +1,49 @@
+$bg__white: #fff;
+$bg__gray: #f1f1f1;
+$bg__substrate: #e6e6e6;
+
+$basic: #222222;
+$descriptor: #767676;
+$icon: #a7a7a7;
+$stroke: #d8d8d8;
+
+$blue-primary: #0656b4;
+$blue-secondary: #dfe9f5;
+$blue-banner: #abc8ea;
+
+$label__red: #ff0000;
+$label__reviews: #efd967;
+
+$big-xxl: 1800;
+$big-r: 1451;
+$desm-r: 1280;
+$desm-r: 1179;
+$tab-r: 1100;
+$mtab-r: 992;
+$smtab-r: 840;
+$stab-r: 768;
+$xstab-r: 660;
+$bmob-r: 576;
+$mmob-r: 500;
+$smob-r: 400;
+
+@mixin adpt-min($width) {
+  @media (min-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin adpt-max($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin pseudo {
+  content: '';
+  display: block;
+  position: absolute;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
